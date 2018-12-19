@@ -1,8 +1,8 @@
-﻿using System;
+﻿using Business.Entities;
+using Business.Enums;
+using Business.Interfaces;
+using Business.Services;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Module01_w4
 {
@@ -10,6 +10,8 @@ namespace Module01_w4
     {
         static void Main(string[] args)
         {
+            IApplicationService applicationService = new ApplicationService();
+            IEnumerable<Post> sortedPosts = applicationService.SortPostsByDate(SortDirection.Asc);
         }
     }
 }
